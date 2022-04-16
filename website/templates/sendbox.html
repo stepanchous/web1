@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Сообщение{% endblock %}
+
+{%block content%}
+<style>
+    ::placeholder {
+        color:aliceblue;}
+</style>
+<script>
+    function on_click(){
+        window.location.href="/end";
+    }
+</script> 
+<form method="POST" class="placeholder" action="/end">
+    <div align="center">
+        <textarea 
+            name="message"
+            id="message"
+            placeholder="Введите поздравление"
+            maxlength="1000"
+            resize="none"
+            style="resize: none;
+                   background: transparent;
+                   color: aliceblue;
+                   -webkit-border-radius: 5px;
+                   -moz-border-radius: 5px;
+                   border-radius: 5px;
+                   outline: none !important;
+                   border: 1px solid white;
+                   border-color:white;"></textarea>
+        <br/>
+        <br/>
+        <input 
+            name="name"
+            id="name"
+            class="form_control"
+            placeholder="Отправитель"
+            maxlength="30"
+            resize="none"
+            style="resize: none;
+                   background: transparent;
+                   color: aliceblue;
+                   -webkit-border-radius: 5px;
+                   -moz-border-radius: 5px;
+                   border-radius: 5px;
+                   outline: none !important;
+                   border: 1px solid white;
+                   border-color:white;"/>
+        <br/>
+        <br/>
+        <br/>
+        <button onclick="on_click()" type="submit" class="btn btn-outline-light">
+            поздравить!
+        </button>
+    </div>
+</form>
+{% endblock %}
